@@ -1,0 +1,4 @@
+class: Weather
+table: weather
+fields:
+  temperatur: int

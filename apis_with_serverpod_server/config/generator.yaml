@@ -1,0 +1,3 @@
+type: server
+
+client_package_path: ../apis_with_serverpod_client
