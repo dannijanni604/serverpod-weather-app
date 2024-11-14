@@ -11,17 +11,26 @@ class WeatherView extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(title: const Text('Weather App')),
         body: Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(20),
             child: Column(children: [
               Padding(
-                  padding: const EdgeInsets.only(bottom: 16.0),
-                  child: TextField(controller: controller.textEditingController, decoration: const InputDecoration(hintText: 'Enter your City Name'))),
-              Padding(padding: const EdgeInsets.only(bottom: 16.0), child: ElevatedButton(onPressed: controller.fetchWeather, child: const Text('Check weather'))),
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: TextField(
+                      controller: controller.textEditingController,
+                      decoration: const InputDecoration(
+                          hintText: 'Enter your City Name'))),
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: ElevatedButton(
+                      onPressed: controller.fetchWeather,
+                      child: const Text('Check weather'))),
               Obx(() => controller.resultMessage.isNotEmpty
                   ? Container(
-                      height: 50,
+                      height: 52,
                       color: Colors.grey,
-                      child: Center(child: Text("${controller.textEditingController.text} weather is :${controller.resultMessage.value}")))
+                      child: Center(
+                          child: Text(
+                              "${controller.textEditingController.text} weather is :${controller.resultMessage.value}")))
                   : const SizedBox())
             ])));
   }
